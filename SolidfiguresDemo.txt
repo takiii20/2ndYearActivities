@@ -1,0 +1,54 @@
+import java.util.Scanner;
+public class SolidFiguresDemo {
+    public static void main(String args[]){
+        SolidFigures sf = new SolidFigures();
+        Scanner x = new Scanner(System.in);
+        int enter;
+        do{System.out.println("1) Sphere");
+        System.out.println("2) Cube");
+        System.out.println("3) Rectangular Solid");
+        System.out.println("4) Cylinder");
+        System.out.println("0) Quit");
+        System.out.println("Enter option 0 - 4: ");
+         enter = x.nextInt();
+     }while(enter >= 5);
+
+     switch(enter){
+
+        case 1 : 
+        System.out.println("Enter radius: ");
+        double radius = x.nextDouble();
+        sf.VolumeSphere(radius);
+        sf.AreaSphere(radius);
+        break;
+        case 2 :
+        System.out.println("Enter radius: ");
+        double side = x.nextDouble();
+        sf.VolumeCube(side);
+        sf.AreaCube(side);
+        break;
+        case 3:
+        System.out.println("Enter length: ");
+        double length = x.nextDouble();
+        System.out.println("Enter height: ");
+        double height = x.nextDouble();
+        System.out.println("Enter width: ");
+        double width = x.nextDouble();
+        sf.VolumeRectangularSolid(length,height,width);
+        sf.AreaRectangularSolid(length,height,width);
+        break;
+        case 4:
+        System.out.println("Enter radius: ");
+         radius = x.nextDouble();
+        System.out.println("Enter height: ");
+         height = x.nextDouble();
+        sf.VolumeCylinder(radius, height);
+        sf.AreaCylinder(radius, height);
+        break;
+        default:
+            break;
+    }
+       
+    x.close();
+    }
+}

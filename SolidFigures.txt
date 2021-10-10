@@ -1,0 +1,49 @@
+import java.util.*;
+public class SolidFigures {
+   public void VolumeSphere(double radius){
+      double total;
+      total = (4/3)*Math.PI*radius*radius*radius;
+      System.out.println("Volume of Sphere: "+total);
+   }
+   public void AreaSphere(double radius){
+      double total;
+      total = 4*Math.PI*radius*radius;
+      System.out.println("Surface area of Sphere: "+total);
+   
+   }
+   public void VolumeCube(double side){
+      double total;
+      total = side*side*side;
+      System.out.println("Volume of Cube: "+total);
+   
+   }
+   public void AreaCube(double side){
+      double total;
+      total = 6*(side * side);
+      System.out.println("Surface area of cube: "+total);
+   }
+   public void VolumeRectangularSolid(double length, double height,double width){
+      double total;
+      total = length*width*height;
+      System.out.println("Volume of Rectangular Solid "+total);
+   
+   }
+   public void AreaRectangularSolid(double length, double height,double width){
+      double total;
+      total = 2*((length*width)+(length*height)+(width*height));
+      System.out.println("Enter radius: "+total);
+   }
+   public void VolumeCylinder(double radius, double height){
+      double total;
+      total = Math.PI*(radius*radius)*height;
+      System.out.println("Volume of Cylinder: "+total);
+   }
+   public void AreaCylinder(double radius, double height){
+      double total;
+      total = (2*Math.PI*(radius*radius)) + (2*Math.PI*radius*height);
+      System.out.println("Surface area of Cylinder: "+total);
+   }
+
+
+
+}

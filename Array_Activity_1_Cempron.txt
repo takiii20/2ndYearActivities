@@ -1,0 +1,90 @@
+import java.util.*;
+import java.text.DecimalFormat;
+
+public class gradingSystem{
+   public static void main(String[] args){
+      Scanner con = new Scanner(System.in);
+      
+      System.out.print("Enter number of students: ");
+      int numStud = con.nextInt();
+      int count = 1;
+      String temp;
+      
+      System.out.println("==================================");
+
+      String[] student = new String[numStud];
+      //loop to enter student names
+      for(int i = 0; i < numStud; i++){
+         System.out.print("Enter Students #"+(count)+": ");
+         student[i] = con.next();
+      count++;
+      }//end loop for student[i]
+      
+      System.out.println("==================================");
+      System.out.print("Enter number of quizzes: ");
+      int numQuiz = con.nextInt();
+      
+    int score[][] = new int [numStud][numQuiz];
+    
+    //loop container for student with scores
+    for(int i = 0; i < numStud; i++){
+    System.out.println("\n Enter scores for "+student[i]);
+      for(int j = 0; j < numQuiz; j++){
+       
+         System.out.print("Quiz#"+(j+1)+": ");
+         score[i][j] = con.nextInt();
+      }
+   }//end loop for stud w/ scores
+   
+   System.out.println("===================================================================");
+   System.out.print("Student\t");
+   
+   //loop display for dynamic quiz output
+   for(int i = 1; i <= numQuiz; i++){
+      System.out.print("Quiz "+i+"\t");
+   }
+   
+   System.out.print("Total\t\tAverage\n");
+
+   DecimalFormat noDecimals = new DecimalFormat("");
+   
+   for(int i = 0; i < numStud-1; i++){
+    
+      for(int j = i+1; j < numStud; j++){
+      int tempTotal = 0, tempTotal2 = 0;
+      
+         for(int x = 0; x < numQuiz; x++){
+         tempTotal = tempTotal + score[i][x];     
+         tempTotal2 = tempTotal2 + score[j][x]; 
+         }
+          
+      if(tempTotal < tempTotal2){
+      temp = student[i];
+      student[i] = student[j];
+      student[j] = temp;
+      
+            //exchange process
+            for(int y = 0 ; y < numQuiz;y++){
+               int tempnum = score[i][y];
+                  score[i][y] = score[j][y];
+                  score[j][y] = tempnum;    
+            }
+      }//if end  
+      }
+   }
+ 
+    for(int i = 0; i < numStud;i++){
+      double total = 0;
+      System.out.print(student[i]+"");
+      
+      for(int j = 0; j < numQuiz; j++){
+      total = total + score[i][j];
+      System.out.print("\t\t"+score[i][j]+"\t");
+      }//end inner loop display scores
+      
+   System.out.print("\t\t"+noDecimals.format(total)+"\t\t\t"+String.format("%.1f",total/numQuiz)+"\n");
+   
+   }
+   System.out.println("---end of list---");
+   }
+ }

@@ -1,0 +1,96 @@
+//problem no.1
+import java.util.Scanner;
+
+public class ArrayPracticeProblem{
+   public static void main(String[] args){
+   Scanner con = new Scanner(System.in);
+     
+      //Problem 1  
+      System.out.print("Enter a number of students: ");
+      int num = con.nextInt();
+      String students[] = new String [num]; 
+      int count = 1;
+      
+       for(int i=0;i<num;i++)
+      { 
+         System.out.print("Enter student #"+count+": ");
+         students[i] = con.next();
+         count++;
+      }
+      System.out.println("Output:\nStudent list:");
+      for(int i=0;i<num;i++)
+      {
+         System.out.println(students[i]);
+      }
+
+   
+   }
+}
+
+//problem no.2
+import java.util.Scanner;
+
+public class FindingOdd
+{
+   public static void main(String[] args)
+   {
+      Scanner con = new Scanner(System.in);
+      System.out.print("Enter number of integers: ");
+      int n = con.nextInt();
+      int number[] = new int [n]; 
+      int odd=0;
+      int count = 1;
+      for(int i = 0; i<n;i++){
+
+         System.out.print("Enter # "+count+": ");
+         number[i] = con.nextInt();
+         count++;
+         if(number[i]%2!=0){
+            if(odd<number[i]){
+               odd = number[i]; 
+            } 
+         }
+      }
+      System.out.println("Output: \nLargest Odd Number: "+odd);
+
+   }
+
+}
+
+//problem no.3
+import java.util.Scanner;
+public class NumberChecker
+{
+   public static void main(String[] args)
+   {
+      Scanner con = new Scanner(System.in);
+
+      System.out.print("Enter number of integers: ");
+      int x = con.nextInt(); //x=n
+      int count = 1;
+      int num[] = new int[x];
+      boolean search = false;
+
+      for(int i=0;i<x;i++){
+         System.out.print("Enter #"+count+": ");
+            num[i] = con.nextInt();
+         count++;
+      }
+         System.out.print("Search: ");
+            int find = con.nextInt();
+         
+      for(int i=0;i<x;i++){
+         if (num[i]==find){
+            search = true;}
+         }   
+         
+         if(search == true){
+            System.out.println("Number " + find + " is in the list!");
+         } 
+         else{
+            System.out.println("Number " + find + " is not in the list!");
+         }
+           
+   }
+
+}
